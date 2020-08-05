@@ -27,73 +27,17 @@ byte tab_Nombres_from_fichero[TAM_TablaNombres];
 
 void leerSC2 (char *filename);
 void mostrarSC2 ();
-//static char my_interrupt( void );
-static unsigned int count = 0;
 
 
 
 void main(void){
-	Screen(1);
-	//PutText(1,1,"Loading ...",0);
-	
-
-	//InitInterruptHandler();
-	//SetInterruptHandler( my_interrupt );
-	
-	while( true ) {
-		count++;
-		printf("%i\n\r",count);
-    	//DisableInterrupt();
-		if(count==1){
-			//leerSC2("1.sc2");
-			//mostrarSC2();
-			printf("Has entrado en 2\n\r");
-		}
-		if(count==80){
-			//Cls();
-			//leerSC2("2.sc2");
-			//mostrarSC2();
-			printf("Has entrado en 3\n\r");
-			count=0;
-		}
-
-
-    //EnableInterrupt();
-  	}
-  	//EndInterruptHandler();
-
-	
-
-
-	
-	/*
-	
-	Cls();
-	Beep();
-	leerSC2("2.sc2");
-	mostrarSC2();
-
-		
-
-	Cls();
-	Beep();
-	leerSC2("3.sc2");
-	mostrarSC2();
-
-
-
-	Cls();
-	Beep();
-	leerSC2("4.sc2");
-	mostrarSC2();*/
+	Screen(2);
+	PutText(1,1,"Loading ...",0);
+	leerSC2("1.sc2");
+	mostrarSC2();		
 }
 
 
-static char my_interrupt( void ) {
-	if( IsVsync() == 0 ) return 0;
-	count++;
-	return 1;
-}
 
 void leerSC2 (char *filename) {
 	int file;	// Set a file handler variable
